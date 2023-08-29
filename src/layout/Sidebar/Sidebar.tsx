@@ -22,8 +22,10 @@ const Sidebar = () => {
   if(pathname === "/404") { return null;}
 
   return (
-    <Container openMenu={isOpen ? "open" : ""}>
-      <MainBox openMenu={isOpen ? "open" : ""}>
+    // prop 이름을 openMenu라고 쓰면 다음과 같은 에러가 콘솔에 떠서 $를 붙여서 쓴다.
+    // If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase openMenu instead.
+    <Container $openMenu={isOpen ? "open" : ""}>
+      <MainBox $openMenu={isOpen ? "open" : ""}>
         <StyledLogo>
           <h1>Keep</h1>
         </StyledLogo>
@@ -89,9 +91,7 @@ const Sidebar = () => {
                   isActive ? "active-item" : "inactive-item"
                 }
               >
-                <span>
-                  {icon}
-                </span>
+                <span>{icon}</span>
                 <span>{getStandardName(title)}</span>
               </NavLink>
             </li>

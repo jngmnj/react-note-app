@@ -78,10 +78,10 @@ const Sidebar = () => {
               <span>
                 <MdEdit />
               </span>
-              <span>Edit Notes</span>
+              <span>Edit Tags</span>
             </NavLink>
           </li>
-          {/* archive */}
+          {/* archive, trash */}
           {items.map(({ icon, title, id }) => (
             <li key={id} onClick={() => dispatch(toggleMenu(false))}>
               <NavLink
